@@ -69,7 +69,7 @@ router.post('/signup', isLoggedOut, (req, res) => {
         });
       })
       .then((user) => {
-        return Favorites.create({user: _id, movies: []})
+        return Favorites.create({user: user._id, movies: []})
         .then (response =>{
           res.status(201).json(response);
         });
